@@ -1,24 +1,16 @@
 package com.wormos.nalandaapp;
 
 import static android.app.Activity.RESULT_OK;
-
 import static com.wormos.nalandaapp.Dashboard.storageRef;
 import static com.wormos.nalandaapp.Dashboard.userEmailConverted;
 import static com.wormos.nalandaapp.Dashboard.userRef;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +22,11 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.github.dhaval2404.imagepicker.ImagePicker;
@@ -48,6 +45,7 @@ public class ProfileFragment extends Fragment {
     View view;
     //declaring views and variables
     ImageView studentProfilePictureIv;
+    AppCompatButton logoutBtn;
     TextView studentProfileNameTv, studentProfileRoomNoTv, studentProfileRoomTypeTv;
     FirebaseDatabase database;
     DatabaseReference studentDatabaseReference;
@@ -68,7 +66,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_profile, container, false);
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         studentProfileNameTv = view.findViewById(R.id.student_profile_name_tv);
         studentProfileRoomNoTv = view.findViewById(R.id.student_profile_room_no_tv);
@@ -76,22 +74,29 @@ public class ProfileFragment extends Fragment {
         loadingProfileProgressDialog = view.findViewById(R.id.user_profile_progressBarRL);
         studentProfilePictureIv = view.findViewById(R.id.student_profile_picture_iv);
         profilePhotoUpdateProgress = view.findViewById(R.id.user_profile_photo_progressBar);
+        logoutBtn = view.findViewById(R.id.profile_logout_btn);
 
         //get Firebase Database and Authentication reference
         database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
-        Log.d("studentEmailConverted", mAuth.getCurrentUser().getEmail().replaceAll("\\.", "%7"));
         studentEmailConverted = Objects.requireNonNull(Objects.requireNonNull(mAuth.getCurrentUser()).getEmail()).replaceAll("\\.", "%7");
         studentDatabaseReference = database.getReference("Students/" + studentEmailConverted);
 
         updateProfileWithFirebaseData(studentDatabaseReference);
 
+        //logging out user
+        logoutBtn.setOnClickListener(view -> {
+            mAuth.signOut();
+            Toast.makeText(getContext(), "You are logged out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getContext(), ExploreNalanda.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+        });
+
         //Changing Profile Picture
-        studentProfilePictureIv.setOnClickListener(v->{
+        studentProfilePictureIv.setOnClickListener(v -> {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-            LayoutInflater layoutInflater= getLayoutInflater();
-            View pickImgview = layoutInflater.inflate(R.layout.image_picker_item,null);
+            LayoutInflater layoutInflater = getLayoutInflater();
+            View pickImgview = layoutInflater.inflate(R.layout.image_picker_item, null);
             builder.setCancelable(true);
             builder.setView(pickImgview);
             AlertDialog alertDialogImg = builder.create();
@@ -109,7 +114,7 @@ public class ProfileFragment extends Fragment {
             galleryCardView.setOnClickListener(view1 -> {
                 ImagePicker.with(this)
                         .galleryOnly()
-                        .crop(1f,1f)
+                        .crop(1f, 1f)
                         .maxResultSize(720, 1080)
                         .start(0);
                 alertDialogImg.dismiss();
@@ -117,7 +122,7 @@ public class ProfileFragment extends Fragment {
             cameraCardView.setOnClickListener(view1 -> {
                 ImagePicker.with(this)
                         .cameraOnly()
-                        .crop(1f,1f)
+                        .crop(1f, 1f)
                         .maxResultSize(720, 1080)
                         .start(1);
                 alertDialogImg.dismiss();
@@ -138,13 +143,13 @@ public class ProfileFragment extends Fragment {
                 String studentName = Objects.requireNonNull(snapshot.child("name").getValue()).toString();
                 String studentRoomNo = Objects.requireNonNull(snapshot.child("room_no").getValue()).toString();
                 String studentRoomType = Objects.requireNonNull(snapshot.child("room_type").getValue()).toString();
-                String purl =  Objects.requireNonNull(snapshot.child("purl").getValue()).toString();
+                String purl = Objects.requireNonNull(snapshot.child("purl").getValue()).toString();
 
                 //setting string data in text views
                 studentProfileNameTv.setText(studentName);
                 studentProfileRoomNoTv.setText(studentRoomNo);
                 studentProfileRoomTypeTv.setText(studentRoomType);
-                Glide.with(getContext())
+                Glide.with(requireContext())
                         .load(purl)
                         .error(R.drawable.nalanda_bed_logo)
                         .into(studentProfilePictureIv);
@@ -164,12 +169,11 @@ public class ProfileFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == 0) {
             profileUri = data.getData();
-            Dashboard.uploadImageToFirebase(profileUri,storageRef,userRef.child(userEmailConverted),studentProfilePictureIv,profilePhotoUpdateProgress);
+            Dashboard.uploadImageToFirebase(profileUri, storageRef, userRef.child(userEmailConverted), studentProfilePictureIv, profilePhotoUpdateProgress);
         } else if (resultCode == RESULT_OK && requestCode == 1) {
             profileUri = data.getData();
-            Dashboard.uploadImageToFirebase(profileUri,storageRef,userRef.child(userEmailConverted),studentProfilePictureIv,profilePhotoUpdateProgress);
+            Dashboard.uploadImageToFirebase(profileUri, storageRef, userRef.child(userEmailConverted), studentProfilePictureIv, profilePhotoUpdateProgress);
         }
     }
-
 
 }

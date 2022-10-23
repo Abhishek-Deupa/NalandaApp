@@ -13,350 +13,358 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hostel_detail_back_btn"
             android:layout_width="25dp"
             android:layout_height="21dp"
-            android:id="@+id/hostel_detail_back_btn"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/back_btn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/hostel_detail_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/hostel_detail_name"
-            android:text="Chanakaya Hostel"
-            android:textAllCaps="false"
             android:layout_marginStart="13dp"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:textSize="22sp"
             android:layout_marginTop="9dp"
             android:backgroundTint="@color/different_black"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Chanakaya Hostel"
+            android:textAllCaps="false"
             android:textColor="@color/different_black"
-            app:layout_constraintTop_toTopOf="@id/hostel_detail_back_btn"
+            android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@id/hostel_detail_back_btn"
-            app:layout_constraintStart_toEndOf="@id/hostel_detail_back_btn"/>
+            app:layout_constraintStart_toEndOf="@id/hostel_detail_back_btn"
+            app:layout_constraintTop_toTopOf="@id/hostel_detail_back_btn" />
 
         <ImageView
+            android:id="@+id/hostel_detail_image"
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:id="@+id/hostel_detail_image"
             android:layout_marginTop="25dp"
-            android:src="@drawable/hostel_image"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_back_btn"/>
+            android:src="@drawable/hostel_image"
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_back_btn" />
 
         <TextView
+            android:id="@+id/greish_background"
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:id="@+id/greish_background"
-            android:background="@color/white"
             android:alpha=".1"
-            app:layout_constraintBottom_toBottomOf="@id/hostel_detail_image"/>
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/hostel_detail_image" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:textColor="@color/white"
             android:id="@+id/hostel_detail_room"
-            android:text="Room"
-            android:textSize="8sp"
-            android:fontFamily="@font/poppins_regular"
-            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_style_curve"
+            android:backgroundTint="@color/different_black"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Room"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/greish_background"
             app:layout_constraintEnd_toStartOf="@id/hostel_detail_gym"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button_style_curve"
-            android:backgroundTint="@color/different_black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/greish_background"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:textColor="@color/white"
             android:id="@+id/hostel_detail_gym"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_style_curve"
+            android:backgroundTint="@color/different_black"
+            android:fontFamily="@font/poppins_regular"
             android:text="Gym"
-            android:textSize="8sp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_regular"
             android:textAllCaps="false"
-            android:background="@drawable/button_style_curve"
-            android:backgroundTint="@color/different_black"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/greish_background"
             app:layout_constraintEnd_toStartOf="@id/hostel_detail_mess"
-            app:layout_constraintStart_toEndOf="@id/hostel_detail_room"
-            app:layout_constraintBottom_toBottomOf="@id/greish_background"/>
+            app:layout_constraintStart_toEndOf="@id/hostel_detail_room" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hostel_detail_mess"
             android:layout_width="60dp"
             android:layout_height="30dp"
-            android:textColor="@color/white"
-            android:id="@+id/hostel_detail_mess"
-            android:text="Mess"
-            android:textSize="8sp"
-            android:fontFamily="@font/poppins_regular"
-            android:textAllCaps="false"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_style_curve"
-            app:layout_constraintEnd_toStartOf="@id/hostel_detail_reception"
             android:backgroundTint="@color/different_black"
-            app:layout_constraintStart_toEndOf="@id/hostel_detail_gym"
-            app:layout_constraintBottom_toBottomOf="@id/greish_background"/>
+            android:fontFamily="@font/poppins_regular"
+            android:text="Mess"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/greish_background"
+            app:layout_constraintEnd_toStartOf="@id/hostel_detail_reception"
+            app:layout_constraintStart_toEndOf="@id/hostel_detail_gym" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hostel_detail_reception"
             android:layout_width="60dp"
             android:layout_height="30dp"
-            android:textColor="@color/white"
-            android:id="@+id/hostel_detail_reception"
-            android:text="Reception"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="8sp"
-            android:textAllCaps="false"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_style_curve"
             android:backgroundTint="@color/different_black"
-            app:layout_constraintStart_toEndOf="@id/hostel_detail_mess"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Reception"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/greish_background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/greish_background"/>
+            app:layout_constraintStart_toEndOf="@id/hostel_detail_mess" />
 
         <ImageView
+            android:id="@+id/select_chanakya_hostel_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_location_24"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="16dp"
-            android:id="@+id/select_chanakya_hostel_icon"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_location_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_image"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:id="@+id/hostel_detail_location"
-            android:textAllCaps="false"
-            android:textSize="14sp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/chanakaya_location"
-            android:layout_marginStart="7dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/select_chanakya_hostel_icon"
-            app:layout_constraintTop_toTopOf="@id/select_chanakya_hostel_icon"/>
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_image" />
 
         <TextView
+            android:id="@+id/hostel_detail_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/chanakaya_location"
+            android:textAllCaps="false"
+            android:textColor="@color/different_black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/select_chanakya_hostel_icon"
+            app:layout_constraintTop_toTopOf="@id/select_chanakya_hostel_icon" />
+
+        <TextView
+            android:id="@+id/hostel_detail_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/hostel_detail_text"
-            android:textSize="18sp"
             android:layout_marginStart="37dp"
             android:layout_marginTop="19dp"
             android:fontFamily="@font/poppins_regular"
             android:text="Facilities"
             android:textColor="@color/different_black"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_location"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_location" />
 
         <ImageView
+            android:id="@+id/food_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/food_icon"
-            app:layout_constraintEnd_toStartOf="@id/AC_icon"
-            android:src="@drawable/nalanda_logo"
             android:layout_marginTop="55dp"
-            app:layout_constraintTop_toBottomOf="@id/room_icon"
+            android:src="@drawable/hygenic_food_icon"
+            app:layout_constraintEnd_toStartOf="@id/AC_icon"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/room_icon"
             tools:ignore="ContentDescription" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
             android:fontFamily="@font/poppins_regular"
             android:text="Hygenic Food"
-            app:layout_constraintStart_toStartOf="@id/food_icon"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@id/food_icon"
-            app:layout_constraintTop_toBottomOf="@id/food_icon"/>
+            app:layout_constraintStart_toStartOf="@id/food_icon"
+            app:layout_constraintTop_toBottomOf="@id/food_icon" />
 
         <ImageView
+            android:id="@+id/cafeteria_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/cafeteria_icon"
-            android:src="@drawable/nalanda_logo"
             android:layout_marginTop="55dp"
+            android:src="@drawable/cafeteria_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/transport_icon"
             app:layout_constraintTop_toBottomOf="@id/room_icon"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             android:id="@+id/laundry_icon"
-            android:src="@drawable/nalanda_logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginTop="55dp"
+            android:src="@drawable/laundry_icon"
             app:layout_constraintEnd_toStartOf="@id/transport_icon"
-            app:layout_constraintTop_toBottomOf="@id/room_icon"
             app:layout_constraintStart_toEndOf="@id/food_icon"
+            app:layout_constraintTop_toBottomOf="@id/room_icon"
             tools:ignore="ContentDescription" />
 
         <ImageView
+            android:id="@+id/transport_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/transport_icon"
-            android:src="@drawable/nalanda_logo"
             android:layout_marginTop="55dp"
-            app:layout_constraintTop_toBottomOf="@id/room_icon"
-            app:layout_constraintStart_toEndOf="@id/laundry_icon"
+            android:src="@drawable/transport_icon"
             app:layout_constraintEnd_toStartOf="@id/cafeteria_icon"
+            app:layout_constraintStart_toEndOf="@id/laundry_icon"
+            app:layout_constraintTop_toBottomOf="@id/room_icon"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
             android:fontFamily="@font/poppins_regular"
             android:text="Transport"
-            app:layout_constraintStart_toStartOf="@id/transport_icon"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@id/transport_icon"
-            app:layout_constraintTop_toBottomOf="@id/transport_icon"/>
+            app:layout_constraintStart_toStartOf="@id/transport_icon"
+            app:layout_constraintTop_toBottomOf="@id/transport_icon" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
             android:fontFamily="@font/poppins_regular"
             android:text="Cafeteria"
-            app:layout_constraintStart_toStartOf="@id/cafeteria_icon"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@id/cafeteria_icon"
-            app:layout_constraintTop_toBottomOf="@id/cafeteria_icon"/>
+            app:layout_constraintStart_toStartOf="@id/cafeteria_icon"
+            app:layout_constraintTop_toBottomOf="@id/cafeteria_icon" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
             android:fontFamily="@font/poppins_regular"
             android:text="Laundry"
-            app:layout_constraintStart_toStartOf="@id/laundry_icon"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@id/laundry_icon"
-            app:layout_constraintTop_toBottomOf="@id/laundry_icon"/>
+            app:layout_constraintStart_toStartOf="@id/laundry_icon"
+            app:layout_constraintTop_toBottomOf="@id/laundry_icon" />
 
         <ImageView
+            android:id="@+id/room_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/room_icon"
-            app:layout_constraintEnd_toStartOf="@id/AC_icon"
-            android:src="@drawable/nalanda_logo"
             android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
+            android:src="@drawable/furnished_room_icon"
+            app:layout_constraintEnd_toStartOf="@id/AC_icon"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
             tools:ignore="ContentDescription" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
             android:fontFamily="@font/poppins_regular"
             android:text="Furnished Room"
-            app:layout_constraintStart_toStartOf="@id/room_icon"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@id/room_icon"
-            app:layout_constraintTop_toBottomOf="@id/room_icon"/>
+            app:layout_constraintStart_toStartOf="@id/room_icon"
+            app:layout_constraintTop_toBottomOf="@id/room_icon"
+            tools:ignore="HardcodedText" />
 
         <ImageView
+            android:id="@+id/security_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/security_icon"
-            android:src="@drawable/nalanda_logo"
             android:layout_marginTop="8dp"
+            android:src="@drawable/security_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/wifi_icon"
             app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             android:id="@+id/AC_icon"
-            android:src="@drawable/nalanda_logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
+            android:src="@drawable/air_condition_icon"
             app:layout_constraintEnd_toStartOf="@id/wifi_icon"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
             app:layout_constraintStart_toEndOf="@id/room_icon"
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
             tools:ignore="ContentDescription" />
 
         <ImageView
+            android:id="@+id/wifi_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/wifi_icon"
-            android:src="@drawable/nalanda_logo"
             android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
-            app:layout_constraintStart_toEndOf="@id/AC_icon"
+            android:src="@drawable/wifibw"
             app:layout_constraintEnd_toStartOf="@id/security_icon"
+            app:layout_constraintStart_toEndOf="@id/AC_icon"
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_text"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
             android:fontFamily="@font/poppins_regular"
             android:text="Wifi"
-            app:layout_constraintStart_toStartOf="@id/wifi_icon"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@id/wifi_icon"
-            app:layout_constraintTop_toBottomOf="@id/wifi_icon"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Security"
-            app:layout_constraintStart_toStartOf="@id/security_icon"
-            app:layout_constraintEnd_toEndOf="@id/security_icon"
-            app:layout_constraintTop_toBottomOf="@id/security_icon"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/different_black"
-            android:textSize="8sp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Air Condition"
-            app:layout_constraintStart_toStartOf="@id/AC_icon"
-            app:layout_constraintEnd_toEndOf="@id/AC_icon"
-            app:layout_constraintTop_toBottomOf="@id/AC_icon"/>
+            app:layout_constraintStart_toStartOf="@id/wifi_icon"
+            app:layout_constraintTop_toBottomOf="@id/wifi_icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Security"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@id/security_icon"
+            app:layout_constraintStart_toStartOf="@id/security_icon"
+            app:layout_constraintTop_toBottomOf="@id/security_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Air Condition"
+            android:textColor="@color/different_black"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@id/AC_icon"
+            app:layout_constraintStart_toStartOf="@id/AC_icon"
+            app:layout_constraintTop_toBottomOf="@id/AC_icon" />
+
+        <TextView
             android:id="@+id/hostel_detail_short_description"
-            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="37dp"
             android:layout_marginTop="42dp"
             android:fontFamily="@font/poppins_regular"
             android:text="Short Description"
             android:textColor="@color/different_black"
-            app:layout_constraintTop_toBottomOf="@+id/food_icon"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food_icon" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:textColor="@color/different_black"
-            android:textAllCaps="false"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_regular"
             android:justificationMode="inter_word"
             android:text="@string/hostel_description"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginStart="27dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintTop_toBottomOf="@id/hostel_detail_short_description"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textAllCaps="false"
+            android:textColor="@color/different_black"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hostel_detail_short_description" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

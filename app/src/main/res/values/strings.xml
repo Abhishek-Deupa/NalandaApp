@@ -38,6 +38,7 @@
         <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
+        <item>Other</item>
     </string-array>
 
 
@@ -1220,6 +1221,8 @@
         <item>Etawah</item>
         <item>Fatehpur Sikri</item>
         <item>Firozabad</item>
+        <item>Ghaziabad</item>
+        <item>Greater Noida</item>
         <item>Hapur</item>
         <item>Hardoi</item>
         <item>Jhansi</item>

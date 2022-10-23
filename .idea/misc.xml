@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Android Projects/NalandaApp/app/src/main/res/drawable/rounded_swipe_transparent.xml" value="0.186" />
+        <entry key="..\:/Android/Android Projects/NalandaApp/app/src/main/res/layout/activity_hostel_detail.xml" value="0.31530139103554866" />
+        <entry key="..\:/Android/Android Projects/NalandaApp/app/src/main/res/layout/activity_main.xml" value="0.18796296296296297" />
+        <entry key="..\:/Android/Android Projects/NalandaApp/app/src/main/res/layout/fragment_profile.xml" value="0.31791530944625407" />
+        <entry key="..\:/Android/Android Projects/NalandaApp/app/src/main/res/layout/fragment_support.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Android Projects/NalandaApp/app/src/main/res/layout/support_swipe_item.xml" value="0.2" />
         <entry key="..\:/Android/Android_Projects/NalandaApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
         <entry key="..\:/Android/Android_Projects/NalandaApp/app/src/main/res/drawable-v24/textview_boundary.xml" value="0.1145" />
         <entry key="..\:/Android/Android_Projects/NalandaApp/app/src/main/res/drawable/button_style_curve.xml" value="0.121" />

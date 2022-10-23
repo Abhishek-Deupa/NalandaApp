@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:backgroundTint="@color/different_white"
-    app:cardBackgroundColor="@color/different_white"
     android:background="@color/different_white"
-    android:outlineAmbientShadowColor="@color/different_white"
-    android:outlineSpotShadowColor="@color/different_white">
+    android:backgroundTint="@color/different_white"
+    app:cardBackgroundColor="@color/different_white">
 
 
     <LinearLayout
@@ -25,6 +23,7 @@
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginStart="55dp"
+            android:importantForAccessibility="no"
             android:src="@drawable/wifibw" />
 
         <androidx.constraintlayout.motion.widget.MotionLayout
@@ -43,10 +42,11 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="10dp"
-                android:paddingStart="20dp"
-                android:textColor="@color/black"
-                android:gravity="center|start"
                 android:background="@drawable/rounded_swipe_transparent"
+                android:gravity="center|start"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
